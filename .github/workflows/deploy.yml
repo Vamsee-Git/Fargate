@@ -5,7 +5,7 @@ on:
 
 jobs:
   # Job 1: Checkout Code
-  JOB1:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code

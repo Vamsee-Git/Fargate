@@ -1,8 +1,8 @@
 terraform {
   backend "s3" {
-    bucket         = "akired"
-    key            = "env:/dev/terraform.tfstate"
-    region         = "us-west-2"
+    bucket         = "my-terraform-state-bucket-two-tier-vamsee"
+    key            = "terraform/statefile_ecs"
+    region         = "ap-south-1"
     dynamodb_table = "terraform-locks"
   }
 }

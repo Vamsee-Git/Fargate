@@ -14,9 +14,8 @@ output "alb_dns_name" {
   description = "The DNS name of the Application Load Balancer"
   value       = module.alb.alb_dns_name
 }
-/*
+
 output "patient_service_repo_url" {
   description = "The repository URL for the patient service"
   value       = module.ecr.patient_service_repo_url
 }
-*/

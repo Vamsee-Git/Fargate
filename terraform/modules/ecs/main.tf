@@ -70,6 +70,11 @@ resource "aws_ecs_service" "patient_service" {
     security_groups = [var.security_group_id]
     assign_public_ip = true
   }
+  load_balancer {
+    target_group_arn = var.patient_tg_arn
+    container_name   = "patient"
+    container_port   = 3000
+  }
 }
 
 # Appointment Service ECS Service
@@ -84,5 +89,10 @@ resource "aws_ecs_service" "appointment_service" {
     subnets          = [var.subnet_id]
     security_groups = [var.security_group_id]
     assign_public_ip = true
+  }
+  load_balancer {
+    target_group_arn = var.appointment_tg_arn
+    container_name   = "appointment"
+    container_port   = 3001
   }
 }

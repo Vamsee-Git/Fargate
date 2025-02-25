@@ -56,12 +56,12 @@ variable "ecs_task_family" {
 
 variable "patient_service_image" {
   description = "Docker image URL for the patient service"
-  default     = "510278866235.dkr.ecr.us-east-1.amazonaws.com/patient-service:latest"
+  default     = "664418994073.dkr.ecr.us-east-1.amazonaws.com/patient-service:latest"
 }
 
 variable "appointment_service_image" {
   description = "Docker image URL for the appointment service"
-  default     = "510278866235.dkr.ecr.us-east-1.amazonaws.com/appointment-service:latest"
+  default     = "664418994073.dkr.ecr.us-east-1.amazonaws.com/appointment-service:latest"
 }
 
 # ALB Configuration

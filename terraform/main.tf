@@ -82,6 +82,6 @@ module "alb" {
   appointment_service_ip     = module.ecs.appointment_service_ip  # Pass ECS appointment service IP from the ECS module
 }
 module "cloudwatch" {
-  source         = "./modules/Cloudwatch"
+  source         = "./modules/cloudwatch"
   log_group_name = var.log_group_name
 }

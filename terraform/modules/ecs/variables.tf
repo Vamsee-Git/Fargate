@@ -37,6 +37,14 @@ variable "security_group_id" {
   description = "Security Group ID for ECS services"
   type        = string
 }
+variable "appointment_tg_arn" {
+  description = "ECS Task Role ARN"
+  type        = string
+}
+variable "patient_tg_arn" {
+  description = "ECS Task Role ARN"
+  type        = string
+}
 
 
 

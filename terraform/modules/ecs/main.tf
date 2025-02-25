@@ -72,7 +72,7 @@ resource "aws_ecs_service" "patient_service" {
   }
   load_balancer {
     target_group_arn = var.patient_tg_arn
-    container_name   = "patient"
+    container_name   = "patient-service"
     container_port   = 3000
   }
 }
@@ -92,7 +92,7 @@ resource "aws_ecs_service" "appointment_service" {
   }
   load_balancer {
     target_group_arn = var.appointment_tg_arn
-    container_name   = "appointment"
+    container_name   = "appointment-service"
     container_port   = 3001
   }
 }

@@ -61,6 +61,8 @@ module "ecs" {
   appointment_service_image = var.appointment_service_image
   subnet_id            = module.vpc.public_subnet_1_id
   security_group_id    = aws_security_group.ecs_sg.id
+  patient_tg_arn       = module.alb.patient_tg_arn
+  appointment_tg_arn   = module.alb.appointment_tg_arn
 }
 
 module "ecr" {

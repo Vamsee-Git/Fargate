@@ -21,7 +21,7 @@ resource "aws_ecs_task_definition" "patient_service" {
           "awslogs-region"        = "us-west-1"
           "awslogs-stream-prefix" = "ecs"
         }
-
+  }
   container_definitions = jsonencode([{
     name      = "patient-service"
     image     = var.patient_service_image

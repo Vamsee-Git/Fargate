@@ -17,3 +17,5 @@ appointment_service_image = "664418994073.dkr.ecr.us-east-1.amazonaws.com/appoin
 
 # ALB Configuration
 alb_name                 = "dev-alb"
+#Cloudwatch configuration
+log_group_name           = "ecs-cluster-logs"

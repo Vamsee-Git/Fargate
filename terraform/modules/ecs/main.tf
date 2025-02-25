@@ -14,6 +14,14 @@ resource "aws_ecs_task_definition" "patient_service" {
   cpu       = "256"
   memory    = "512"
 
+  logConfiguration = {
+        logDriver = "awslogs"
+        options = {
+          "awslogs-group"         = var.log_group_name
+          "awslogs-region"        = "us-west-1"
+          "awslogs-stream-prefix" = "ecs"
+        }
+
   container_definitions = jsonencode([{
     name      = "patient-service"
     image     = var.patient_service_image

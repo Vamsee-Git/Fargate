@@ -11,9 +11,9 @@ az_2                     = "us-east-1b"
 
 # ECS Configuration
 ecs_cluster_name         = "dev-cluster"
-ecs_task_family          = "dev-task-family"
-patient_service_image    = "510278866235.dkr.ecr.us-east-1.amazonaws.com/patient-service:latest"
-appointment_service_image = "510278866235.dkr.ecr.us-east-1.amazonaws.com/appointment-service:latest"
+ecs_task_family          = "dev-health"
+patient_service_image    = "664418994073.dkr.ecr.us-east-1.amazonaws.com/patient-service:latest"
+appointment_service_image = "664418994073.dkr.ecr.us-east-1.amazonaws.com/patient-service:latest"
 
 # ALB Configuration
 alb_name                 = "dev-alb"

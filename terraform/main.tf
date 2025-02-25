@@ -81,3 +81,7 @@ module "alb" {
   patient_service_ip         = module.ecs.patient_service_ip  # Pass ECS patient service IP from the ECS module
   appointment_service_ip     = module.ecs.appointment_service_ip  # Pass ECS appointment service IP from the ECS module
 }
+module "cloudwatch" {
+  source         = "./modules/Cloudwatch"
+  log_group_name = var.log_group_name
+}

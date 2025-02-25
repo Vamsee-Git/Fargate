@@ -69,3 +69,7 @@ variable "alb_name" {
   description = "The name of the Application Load Balancer"
   default     = "dev-alb"
 }
+variable "log_group_name" {
+  description = "Name of the CloudWatch log group"
+  type        = string
+}

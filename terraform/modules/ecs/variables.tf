@@ -38,11 +38,11 @@ variable "security_group_id" {
   type        = string
 }
 variable "appointment_tg_arn" {
-  description = "ECS Task Role ARN"
+  description = "appointment targetgroup ARN"
   type        = string
 }
 variable "patient_tg_arn" {
-  description = "ECS Task Role ARN"
+  description = "patient targetgroup ARN"
   type        = string
 }
 

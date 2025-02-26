@@ -2,10 +2,6 @@
 resource "aws_ecs_cluster" "main" {
   name = var.ecs_cluster_name
 }
-resource "aws_cloudwatch_log_group" "ecs_logs" {
-  name = "/ecs/${var.log_group_name}"
-}
-
 # Patient Service ECS Task Definition
 resource "aws_ecs_task_definition" "patient_service" {
   family                   = var.ecs_task_family

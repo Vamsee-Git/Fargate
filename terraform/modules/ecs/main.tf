@@ -2,6 +2,9 @@
 resource "aws_ecs_cluster" "main" {
   name = var.ecs_cluster_name
 }
+resource "aws_cloudwatch_log_group" "ecs_logs" {
+  name = "/ecs/${var.log_group_name}"
+}
 
 # Patient Service ECS Task Definition
 resource "aws_ecs_task_definition" "patient_service" {
@@ -27,6 +30,14 @@ resource "aws_ecs_task_definition" "patient_service" {
         protocol      = "tcp"
       }
     ]
+    logConfiguration = {
+        logDriver = "awslogs"
+        options = {
+          awslogs-group         = aws_cloudwatch_log_group.ecs_logs.name
+          awslogs-region        = "us-west-1"
+          awslogs-stream-prefix = "patient-service"
+        }
+      }
   }])
 }
 
@@ -54,6 +65,14 @@ resource "aws_ecs_task_definition" "appointment_service" {
         protocol      = "tcp"
       }
     ]
+    logConfiguration = {
+        logDriver = "awslogs"
+        options = {
+          awslogs-group         = aws_cloudwatch_log_group.ecs_logs.name
+          awslogs-region        = "us-west-1"
+          awslogs-stream-prefix = "appointment-service"
+        }
+      }
   }])
 }
 

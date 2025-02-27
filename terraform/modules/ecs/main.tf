@@ -39,7 +39,7 @@ resource "aws_ecs_task_definition" "patient_service" {
         options = {
           awslogs-group         = aws_cloudwatch_log_group.ecs_logs.name
           awslogs-region        = "us-east-1"
-          awslogs-stream-prefix = "appointment-service"
+          awslogs-stream-prefix = "patient-service"
         }
   }])
 }

@@ -1,6 +1,14 @@
 # Define ECS Cluster
 resource "aws_ecs_cluster" "main" {
   name = var.ecs_cluster_name
+  setting {
+    name  = "containerInsights"
+    value = "enabled"
+  }
+}
+resource "aws_cloudwatch_log_group" "ecs_logs" {
+  name              = "/ecs/${var.ecs_cluster_name}"
+  retention_in_days = 30  # Adjust as needed
 }
 # Patient Service ECS Task Definition
 resource "aws_ecs_task_definition" "patient_service" {
@@ -26,6 +34,13 @@ resource "aws_ecs_task_definition" "patient_service" {
         protocol      = "tcp"
       }
     ]
+    logConfiguration = {
+        logDriver = "awslogs"
+        options = {
+          awslogs-group         = aws_cloudwatch_log_group.ecs_logs.name
+          awslogs-region        = "us-east-1"
+          awslogs-stream-prefix = "appointment-service"
+        }
   }])
 }
 
@@ -53,6 +68,13 @@ resource "aws_ecs_task_definition" "appointment_service" {
         protocol      = "tcp"
       }
     ]
+    logConfiguration = {
+        logDriver = "awslogs"
+        options = {
+          awslogs-group         = aws_cloudwatch_log_group.ecs_logs.name
+          awslogs-region        = "us-east-1"
+          awslogs-stream-prefix = "appointment-service"
+        }
   }])
 }
 

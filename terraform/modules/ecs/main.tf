@@ -41,6 +41,7 @@ resource "aws_ecs_task_definition" "patient_service" {
           awslogs-region        = "us-east-1"
           awslogs-stream-prefix = "patient-service"
         }
+    }
   }])
 }
 
@@ -75,6 +76,7 @@ resource "aws_ecs_task_definition" "appointment_service" {
           awslogs-region        = "us-east-1"
           awslogs-stream-prefix = "appointment-service"
         }
+    }
   }])
 }
 
